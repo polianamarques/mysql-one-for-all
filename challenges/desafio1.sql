@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 CREATE TABLE SpotifyClone.plan(
     id_plan INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     type_of_plan VARCHAR(60) NOT NULL,
-    value DECIMAL(3,2),
+    plan_value DECIMAL(3,2),
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.artist(
     id_artist INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
@@ -30,8 +30,8 @@ CREATE TABLE SpotifyClone.musics(
     music_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     songs VARCHAR(60) NOT NULL UNIQUE, 
     seconds INT, 
-    album_id VARCHAR(60) NOT NULL, 
     reproductions_date DATETIME, 
+    album_id VARCHAR(60) NOT NULL, 
     FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.history_reproductions(
@@ -46,12 +46,13 @@ CREATE TABLE SpotifyClone.following(
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id)
 ) engine = InnoDB;
--- INSERT INTO SpotifyClone.tabela1 (coluna1, coluna2)
--- VALUES
---   ('exemplo de dados 1', 'exemplo de dados A'),
---   ('exemplo de dados 2', 'exemplo de dados B'),
---   ('exemplo de dados 3', 'exemplo de dados C');
--- INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
--- VALUES
---   ('exemplo de dados 1', 'exemplo de dados X'),
---   ('exemplo de dados 2', 'exemplo de dados Y');
+INSERT INTO SpotifyClone.plan (type_of_plan, plan_value)
+VALUES
+  ('gratuito','0'),
+  ('familiar','7,99'),
+  ('universitário', '5,99'),
+  ('pessoal', '6,99');
+INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
+VALUES
+  ('exemplo de dados 1', 'exemplo de dados X'),
+  ('exemplo de dados 2', 'exemplo de dados Y');
