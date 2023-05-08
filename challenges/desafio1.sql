@@ -30,11 +30,11 @@ CREATE TABLE SpotifyClone.musics(
     music_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     songs VARCHAR(60) NOT NULL UNIQUE, 
     seconds INT, 
-    reproductions_date DATETIME, 
     album_id VARCHAR(60) NOT NULL, 
     FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.history_reproductions(
+    reproductions_date DATETIME, 
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id)
     music_id INT NOT NULL, 
@@ -82,4 +82,33 @@ VALUES
    ('QVVJFA?','2003','Baco Exu do Blues'),
    ('Somewhere Far Beyond','2007','Blind Guardian'),
    ('I Put A Spell On You','2012','Nina Simone');
-   
+    INSERT INTO SpotifyClone.musics (songs, seconds, album_id)
+VALUES
+   ('BREAK MY SOUL','279','1'),
+   ("VIRGO'S GROOVE",'369','1'),
+   ('ALIEN SUPERSTAR','116','1'),
+   ("Don't Stop Me Now",'203','2'),
+   ('Under Pressure','152','3'),
+   ('Como Nossos Pais','105','4'),
+   ('O Medo de Amar é o Medo de Ser Livre','207','5'),
+   ('Samba em Paris','267','6'),
+   ("The Bard's Song",'244','7'),
+   ('Feeling Good','100','8');
+       INSERT INTO SpotifyClone.history_reproductions (reproductions_date, user_id, music_id)
+VALUES
+   ('2022-02-28 10:45:55','1','8'),
+   ('2020-05-02 05:30:35','1','2'),
+   ('2020-03-06 11:22:33','1','10'),
+   ('2022-08-05 08:05:17','2','10'),
+   ("2020-01-02 07:40:33",'2','6'),
+   ('2020-11-13 16:55:13','3','10'),
+   ('2020-12-05 18:38:30','3','2'),
+   ('2021-08-15 17:10:10','4','8'),
+   ('2022-01-09 01:44:33','5','8'),
+   ('2020-08-06 15:23:43','5','5'),
+   ('2017-01-24 00:31:17','6','7'),
+   ('2017-10-12 12:35:20','6','1'),
+   ('2011-12-15 22:30:49','7','4'),
+   ('2012-03-17 14:56:41','8','4'),
+   ('2022-02-24 21:14:22','9','9'), 
+   ('2015-12-13 08:30:22','10','3');
