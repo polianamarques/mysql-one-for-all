@@ -60,7 +60,7 @@ VALUES
   ('Baco Exu do Blues'),
   ('Blind Guardian'),
   ('Nina Simone');
-  INSERT INTO SpotifyClone.user (user_name , age,signature_date,id_plan)
+  INSERT INTO SpotifyClone.user (user_name, age, signature_date,id_plan)
 VALUES
    ('Barbara Liskov','82','2019-10-20','1'),
    ('Robert Cecil Martin','58','2017-01-06','1'),
@@ -72,15 +72,14 @@ VALUES
    ('Christopher Alexander','85','2019-06-05','4'),
    ('Judith Butler','45','2020-05-13','4'),
    ('Jorge Amado','58','2017-02-17','4');
-  INSERT INTO SpotifyClone.album (user_name , age,signature_date,id_plan)
+  INSERT INTO SpotifyClone.album (name_album, released_year,artist_name)
 VALUES
-   ('Barbara Liskov','82','2019-10-20','1'),
-   ('Robert Cecil Martin','58','2017-01-06','1'),
-   ('Ada Lovelace','37','2017-12-30','2'),
-   ('Martin Fowler','46','2017-01-17','2'),
-   ('Sandi Metz','58','2018-04-29','2'),
-   ('Paulo Freire','19','2018-02-14','3'),
-   ('Bell Hooks','26','2018-01-05','3'),
-   ('Christopher Alexander','85','2019-06-05','4'),
-   ('Judith Butler','45','2020-05-13','4'),
-   ('Jorge Amado','58','2017-02-17','4');
+   ('Renaissance','2022','Beyoncé'),
+   ('Jazz','1978','Queen'),
+   ('Hot Space','1982','Queen'),
+   ('Falso Brilhante','1998','Elis Regina'),
+   ('Vento de Maio','2001','Elis Regina'),
+   ('QVVJFA?','2003','Baco Exu do Blues'),
+   ('Somewhere Far Beyond','2007','Blind Guardian'),
+   ('I Put A Spell On You','2012','Nina Simone');
+   
