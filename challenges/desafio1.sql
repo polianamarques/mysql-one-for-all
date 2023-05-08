@@ -41,7 +41,7 @@ CREATE TABLE SpotifyClone.history_reproductions(
     FOREIGN KEY (music_id) REFERENCES user (music_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.following(
-    artist_id INT NOT NULL, 
+    artist_id INT , 
     FOREIGN KEY (artist_id) REFERENCES user (artist_id)
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id)
@@ -112,3 +112,19 @@ VALUES
    ('2012-03-17 14:56:41','8','4'),
    ('2022-02-24 21:14:22','9','9'), 
    ('2015-12-13 08:30:22','10','3');
+          INSERT INTO SpotifyClone.following (artist_id, user_id)
+VALUES
+   ('1','1'),
+   ('2','1'),
+   ('3','1'),
+   ('1','2'),
+   ('3','2'),
+   ('2','3'),
+   ('4','4'),
+   ('5','5'),
+   ('6','5'),
+   ('6','6'),
+   ('1','6'),
+   (NULL, '8'),
+   ('3','9'),
+   ('2','10');
