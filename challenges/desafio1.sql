@@ -1,17 +1,22 @@
 -- Descomente e altere as linhas abaixo:
 
--- DROP DATABASE IF EXISTS SpotifyClone;
--- CREATE DATABASE IF NOT EXISTS SpotifyClone;
--- CREATE TABLE SpotifyClone.tabela1(
---     coluna1 tipo restricoes,
---     coluna2 tipo restricoes,
---     colunaN tipo restricoes,
--- ) engine = InnoDB;
--- CREATE TABLE SpotifyClone.tabela2(
---     coluna1 tipo restricoes,
---     coluna2 tipo restricoes,
---     colunaN tipo restricoes,
--- ) engine = InnoDB;
+DROP DATABASE IF EXISTS SpotifyClone;
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
+CREATE TABLE SpotifyClone.plan(
+    id_plan INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    type_of_plan VARCHAR(60) NOT NULL,
+    value DECIMAL(3,2),
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.artist(
+    id_artist INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    artist_name VARCHAR(60) NOT NULL,
+    colunaN tipo restricoes,
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.artist(
+    id_artist INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    artist_name VARCHAR(60) NOT NULL,
+    colunaN tipo restricoes,
+) engine = InnoDB;
 -- INSERT INTO SpotifyClone.tabela1 (coluna1, coluna2)
 -- VALUES
 --   ('exemplo de dados 1', 'exemplo de dados A'),
