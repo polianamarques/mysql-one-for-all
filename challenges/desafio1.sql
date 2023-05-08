@@ -10,12 +10,41 @@ CREATE TABLE SpotifyClone.plan(
 CREATE TABLE SpotifyClone.artist(
     id_artist INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     artist_name VARCHAR(60) NOT NULL,
-    colunaN tipo restricoes,
 ) engine = InnoDB;
-CREATE TABLE SpotifyClone.artist(
-    id_artist INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
-    artist_name VARCHAR(60) NOT NULL,
-    colunaN tipo restricoes,
+CREATE TABLE SpotifyClone.user(
+    user_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    user_name VARCHAR(60) NOT NULL,
+    age INT NOT NULL, 
+    signature_date DATE NOT NULL, 
+    id_plan INT NOT NULL, 
+    FOREIGN KEY (id_plan) REFERENCES plan (id_plan)
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.album(
+    album_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    name_album VARCHAR(60) NOT NULL, 
+    released_year YEAR NOT NULL, 
+    artist_name VARCHAR(60) NOT NULL, 
+    FOREIGN KEY (artist_name) REFERENCES artist (artist_name)
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.musics(
+    music_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+    songs VARCHAR(60) NOT NULL UNIQUE, 
+    seconds INT, 
+    album_id VARCHAR(60) NOT NULL, 
+    reproductions_date DATETIME, 
+    FOREIGN KEY (album_id) REFERENCES album (album_id)
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.history_reproductions(
+    user_id INT NOT NULL, 
+    FOREIGN KEY (user_id) REFERENCES user (user_id)
+    music_id INT NOT NULL, 
+    FOREIGN KEY (music_id) REFERENCES user (music_id)
+) engine = InnoDB;
+CREATE TABLE SpotifyClone.following(
+    artist_id INT NOT NULL, 
+    FOREIGN KEY (artist_id) REFERENCES user (artist_id)
+    user_id INT NOT NULL, 
+    FOREIGN KEY (user_id) REFERENCES user (user_id)
 ) engine = InnoDB;
 -- INSERT INTO SpotifyClone.tabela1 (coluna1, coluna2)
 -- VALUES
