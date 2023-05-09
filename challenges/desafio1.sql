@@ -37,14 +37,14 @@ CREATE TABLE SpotifyClone.history_reproductions(
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id),
     music_id INT NOT NULL, 
-    FOREIGN KEY (music_id) REFERENCES musics (music_id)
+    FOREIGN KEY (music_id) REFERENCES musics (music_id),
     PRIMARY KEY (user_id, music_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.following(
     id_artist INT, 
     FOREIGN KEY (id_artist) REFERENCES artist (id_artist),
     user_id INT NOT NULL, 
-    FOREIGN KEY (user_id) REFERENCES user (user_id)
+    FOREIGN KEY (user_id) REFERENCES user (user_id),
     PRIMARY KEY (id_artist, user_id)
 ) engine = InnoDB;
 INSERT INTO SpotifyClone.plan (type_of_plan, plan_value)
@@ -126,5 +126,6 @@ VALUES
    (6,5),
    (6,6),
    (1,6),
+   (6,7),
    (3,9),
    (2,10);
