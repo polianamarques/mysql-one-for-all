@@ -29,7 +29,7 @@ CREATE TABLE SpotifyClone.musics(
     music_id INT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
     songs VARCHAR(60) NOT NULL UNIQUE, 
     seconds INT, 
-    album_id VARCHAR(60) NOT NULL, 
+    album_id INT NOT NULL, 
     FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.history_reproductions(
@@ -37,20 +37,20 @@ CREATE TABLE SpotifyClone.history_reproductions(
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id),
     music_id INT NOT NULL, 
-    FOREIGN KEY (music_id) REFERENCES user (music_id)
+    FOREIGN KEY (music_id) REFERENCES musics (music_id)
 ) engine = InnoDB;
 CREATE TABLE SpotifyClone.following(
-    artist_id INT , 
-    FOREIGN KEY (artist_id) REFERENCES user (artist_id),
+    id_artist INT, 
+    FOREIGN KEY (id_artist) REFERENCES artist (id_artist),
     user_id INT NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES user (user_id)
 ) engine = InnoDB;
 INSERT INTO SpotifyClone.plan (type_of_plan, plan_value)
 VALUES
   ('gratuito',0),
-  ('familiar',7,99),
-  ('universitário', 5,99),
-  ('pessoal', 6,99);
+  ('familiar',7.99),
+  ('universitário', 5.99),
+  ('pessoal', 6.99);
 INSERT INTO SpotifyClone.artist (artist_name)
 VALUES
   ('Beyoncé'),
@@ -73,14 +73,14 @@ VALUES
    ('Jorge Amado',58,'2017-02-17',4);
   INSERT INTO SpotifyClone.album (name_album, released_year,id_artist)
 VALUES
-   ('Renaissance','2022',1),
-   ('Jazz','1978','2'),
-   ('Hot Space','1982','2'),
-   ('Falso Brilhante','1998','3'),
-   ('Vento de Maio','2001','3'),
-   ('QVVJFA?','2003','4'),
-   ('Somewhere Far Beyond','2007','5'),
-   ('I Put A Spell On You','2012','6');
+   ('Renaissance',2022,1),
+   ('Jazz',1978,2),
+   ('Hot Space',1982,2),
+   ('Falso Brilhante',1998,3),
+   ('Vento de Maio',2001,3),
+   ('QVVJFA?',2003,4),
+   ('Somewhere Far Beyond',2007,5),
+   ('I Put A Spell On You','2012',6);
     INSERT INTO SpotifyClone.musics (songs, seconds, album_id)
 VALUES
    ('BREAK MY SOUL',279,1),
@@ -111,7 +111,7 @@ VALUES
    ('2012-03-17 14:56:41',8,4),
    ('2022-02-24 21:14:22',9,9), 
    ('2015-12-13 08:30:22',10,3);
-          INSERT INTO SpotifyClone.following (artist_id, user_id)
+          INSERT INTO SpotifyClone.following ( id_artist, user_id)
 VALUES
    (1,1),
    (2,1),
@@ -124,6 +124,5 @@ VALUES
    (6,5),
    (6,6),
    (1,6),
-   (8),
    (3,9),
    (2,10);
