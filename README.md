@@ -1,6 +1,6 @@
 # :gear: Projeto One For All
 
-Projeto Back-end que consiste na normalização tabelas não normalizadas, população de um banco de dados MySQL e executação de queries para buscar informações específicas. 
+Projeto Back-end que consiste na normalização de tabelas não normalizadas, população de um banco de dados MySQL e executação de queries para buscar informações específicas. 
 ##
 
 ## Rodando localmente
